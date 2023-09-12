@@ -139,8 +139,10 @@ public class BeerEndpointTest {
     @Test
     @Order(9)
     void testDeleteBeer() {
+        BeerDTO testDto = getSavedTestBeer();
+
         webTestClient.delete()
-                .uri(BeerRouterConfig.BEER_PATH_ID, 1)
+                .uri(BeerRouterConfig.BEER_PATH_ID, testDto.getId())
                 .exchange()
                 .expectStatus().isNoContent();
     }
