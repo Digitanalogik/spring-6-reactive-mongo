@@ -1,5 +1,7 @@
 package fi.tatu.spring6reactivemongo.model;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,9 +15,15 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class BeerDTO {
-    private Integer id;
+    private String id;
+
+    @NotBlank
+    @Size(min = 3, max = 255)
     private String beerName;
+
+    @Size(min = 1, max = 255)
     private String beerStyle;
+
     private String upc;
     private Integer quantityOnHand;
     private BigDecimal price;
