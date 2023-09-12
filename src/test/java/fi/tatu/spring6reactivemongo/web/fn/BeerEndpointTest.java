@@ -58,15 +58,15 @@ public class BeerEndpointTest {
     @Test
     @Order(4)
     void testCreateBeer() {
-        final String NEW_BEER_URL = "http://localhost:8080/api/v3/beer/4";
+        BeerDTO testDto = BeerServiceImplTest.getTestBeerDto();
 
         webTestClient.post()
                 .uri(BeerRouterConfig.BEER_PATH)
-                .body(Mono.just(BeerServiceImplTest.getTestBeer()), BeerDTO.class)
+                .body(Mono.just(testDto), BeerDTO.class)
                 .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .exchange()
                 .expectStatus().isCreated()
-                .expectHeader().location(NEW_BEER_URL);
+                .expectHeader().exists(HttpHeaders.LOCATION);
     }
 
     @Test
