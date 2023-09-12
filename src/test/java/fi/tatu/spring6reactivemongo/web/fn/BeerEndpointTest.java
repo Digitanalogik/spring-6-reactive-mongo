@@ -54,7 +54,7 @@ public class BeerEndpointTest {
     }
 
     @Test
-    @Order(1)
+    @Order(2)
     void testListBeersByStyle() {
         final String BEER_STYLE = "TEST";
         BeerDTO testDto = getSavedTestBeer();
@@ -78,7 +78,7 @@ public class BeerEndpointTest {
 
 
     @Test
-    @Order(2)
+    @Order(3)
     void testGetBeerByIdFound() {
         BeerDTO testDto = getSavedTestBeer();
 
@@ -90,7 +90,7 @@ public class BeerEndpointTest {
     }
 
     @Test
-    @Order(3)
+    @Order(4)
     void testGetBeerByIdNotFound() {
         webTestClient.get().uri(BeerRouterConfig.BEER_PATH_ID, 999)
                 .exchange()
@@ -99,7 +99,7 @@ public class BeerEndpointTest {
 
 
     @Test
-    @Order(4)
+    @Order(5)
     void testCreateBeer() {
         BeerDTO testDto = BeerServiceImplTest.getTestBeerDto();
 
@@ -113,7 +113,7 @@ public class BeerEndpointTest {
     }
 
     @Test
-    @Order(5)
+    @Order(6)
     void testCreateBeerBadName() {
         Beer testBeer = BeerServiceImplTest.getTestBeer();
         testBeer.setBeerName("");
@@ -127,7 +127,7 @@ public class BeerEndpointTest {
     }
 
     @Test
-    @Order(6)
+    @Order(7)
     void testUpdateBeer() {
         BeerDTO testDto = getSavedTestBeer();
         testDto.setBeerName("New");
@@ -140,7 +140,7 @@ public class BeerEndpointTest {
     }
 
     @Test
-    @Order(7)
+    @Order(8)
     void testUpdateBeerBadRequest() {
         Beer testBeer = BeerServiceImplTest.getTestBeer();
         testBeer.setBeerStyle("");
@@ -153,7 +153,7 @@ public class BeerEndpointTest {
     }
 
     @Test
-    @Order(8)
+    @Order(9)
     void testUpdateBeerNotFound() {
         webTestClient.put()
                 .uri(BeerRouterConfig.BEER_PATH_ID, 999)
@@ -163,7 +163,7 @@ public class BeerEndpointTest {
     }
 
     @Test
-    @Order(9)
+    @Order(10)
     void testDeleteBeer() {
         BeerDTO testDto = getSavedTestBeer();
 
@@ -174,7 +174,7 @@ public class BeerEndpointTest {
     }
 
     @Test
-    @Order(10)
+    @Order(11)
     void testDeleteBeerNotFound() {
         webTestClient.delete()
                 .uri(BeerRouterConfig.BEER_PATH_ID, 999)
@@ -184,7 +184,7 @@ public class BeerEndpointTest {
 
 
     @Test
-    @Order(10)
+    @Order(12)
     void testPatchBeerFound() {
         BeerDTO beerDTO = getSavedTestBeer();
 
@@ -196,15 +196,12 @@ public class BeerEndpointTest {
     }
 
     @Test
-    @Order(11)
+    @Order(13)
     void testPatchBeerNotFound() {
-
         webTestClient.patch()
                 .uri(BeerRouterConfig.BEER_PATH_ID, 999)
                 .body(Mono.just(BeerServiceImplTest.getTestBeer()), BeerDTO.class)
                 .exchange()
                 .expectStatus().isNotFound();
     }
-
-
 }
