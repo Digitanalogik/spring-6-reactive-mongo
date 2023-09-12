@@ -12,8 +12,11 @@ import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWeb
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
+import org.springframework.test.web.reactive.server.FluxExchangeResult;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import reactor.core.publisher.Mono;
+
+import java.util.List;
 
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.hasSize;
@@ -25,6 +28,20 @@ public class BeerEndpointTest {
 
     @Autowired
     WebTestClient webTestClient;
+
+    public BeerDTO getSavedTestBeer(){
+        FluxExchangeResult<BeerDTO> beerDTOFluxExchangeResult = webTestClient.post().uri(BeerRouterConfig.BEER_PATH)
+                .body(Mono.just(BeerServiceImplTest.getTestBeer()), BeerDTO.class)
+                .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+                .exchange()
+                .returnResult(BeerDTO.class);
+
+        List<String> location = beerDTOFluxExchangeResult.getResponseHeaders().get(HttpHeaders.LOCATION);
+
+        return webTestClient.get().uri(BeerRouterConfig.BEER_PATH)
+                .exchange().returnResult(BeerDTO.class).getResponseBody().blockFirst();
+    }
+
 
     @Test
     @Order(1)
@@ -38,7 +55,7 @@ public class BeerEndpointTest {
 
     @Test
     @Order(2)
-    void testGetBeerById() {
+    void testGetBeerByIdFound() {
         webTestClient.get().uri(BeerRouterConfig.BEER_PATH_ID, 1)
                 .exchange()
                 .expectStatus().isOk()
@@ -86,9 +103,12 @@ public class BeerEndpointTest {
     @Test
     @Order(6)
     void testUpdateBeer() {
+        BeerDTO testDto = getSavedTestBeer();
+        testDto.setBeerName("New");
+
         webTestClient.put()
-                .uri(BeerRouterConfig.BEER_PATH_ID, 1)
-                .body(Mono.just(BeerServiceImplTest.getTestBeer()), BeerDTO.class)
+                .uri(BeerRouterConfig.BEER_PATH_ID, testDto.getId())
+                .body(Mono.just(testDto), BeerDTO.class)
                 .exchange()
                 .expectStatus().isNoContent();
     }
@@ -137,13 +157,14 @@ public class BeerEndpointTest {
 
     @Test
     @Order(10)
-    void testPatchBeer() {
+    void testPatchBeerFound() {
+        BeerDTO beerDTO = getSavedTestBeer();
 
         webTestClient.patch()
-                .uri(BeerRouterConfig.BEER_PATH_ID, 2)
-                .body(Mono.just(BeerServiceImplTest.getTestBeer()), BeerDTO.class)
+                .uri(BeerRouterConfig.BEER_PATH_ID, beerDTO.getId())
+                .body(Mono.just(beerDTO), BeerDTO.class)
                 .exchange()
-                .expectStatus().isOk();
+                .expectStatus().isNoContent();
     }
 
     @Test
