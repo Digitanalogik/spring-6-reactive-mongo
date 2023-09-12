@@ -132,7 +132,6 @@ class BeerServiceImplTest {
         BeerDTO emptyBeer = expectedEmptyBeerMono.block();
 
         assertThat(emptyBeer).isNull();
-
     }
 
 
