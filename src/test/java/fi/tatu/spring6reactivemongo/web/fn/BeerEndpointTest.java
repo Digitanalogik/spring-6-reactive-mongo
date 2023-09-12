@@ -56,7 +56,9 @@ public class BeerEndpointTest {
     @Test
     @Order(2)
     void testGetBeerByIdFound() {
-        webTestClient.get().uri(BeerRouterConfig.BEER_PATH_ID, 1)
+        BeerDTO testDto = getSavedTestBeer();
+
+        webTestClient.get().uri(BeerRouterConfig.BEER_PATH_ID, testDto.getId())
                 .exchange()
                 .expectStatus().isOk()
                 .expectHeader().valueEquals(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
