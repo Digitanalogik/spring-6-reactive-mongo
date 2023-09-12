@@ -2,6 +2,7 @@ package fi.tatu.spring6reactivemongo.services;
 
 import fi.tatu.spring6reactivemongo.domain.Beer;
 import fi.tatu.spring6reactivemongo.mappers.BeerMapper;
+import fi.tatu.spring6reactivemongo.mappers.BeerMapperImpl;
 import fi.tatu.spring6reactivemongo.model.BeerDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
@@ -37,8 +38,17 @@ class BeerServiceImplTest {
             .beerName("Space Dust")
             .beerStyle("IPA")
             .price(BigDecimal.TEN)
+            .quantityOnHand(12)
             .upc("123123")
             .build();
+    }
+
+    public BeerDTO getSavedBeerDto(){
+        return beerService.saveBeer(Mono.just(getTestBeerDto())).block();
+    }
+
+    public static BeerDTO getTestBeerDto(){
+        return new BeerMapperImpl().beerToBeerDTO(getTestBeer());
     }
 
     @Test
