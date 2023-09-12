@@ -121,6 +121,7 @@ class BeerServiceImplTest {
     }
 
     @Test
+    @DisplayName("Test Delete Beer Using Block")
     void testDeleteBeer() {
         BeerDTO beerToDelete = getSavedBeerDto();
 
