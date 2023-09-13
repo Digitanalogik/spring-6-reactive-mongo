@@ -17,6 +17,18 @@ public class BeerServiceImpl implements BeerService {
     private final BeerRepository beerRepository;
 
     @Override
+    public Flux<BeerDTO> listBeers() {
+        return beerRepository.findAll()
+                .map(beerMapper::beerToBeerDTO);
+    }
+
+    @Override
+    public Mono<BeerDTO> getById(String beerId) {
+        return beerRepository.findById(beerId)
+                .map(beerMapper::beerToBeerDTO);
+    }
+
+    @Override
     public Mono<BeerDTO> findFirstByBeerName(String beerName) {
         return beerRepository.findFirstByBeerName(beerName)
                 .map(beerMapper::beerToBeerDTO);
@@ -29,12 +41,6 @@ public class BeerServiceImpl implements BeerService {
     }
 
     @Override
-    public Flux<BeerDTO> listBeers() {
-        return beerRepository.findAll()
-            .map(beerMapper::beerToBeerDTO);
-    }
-
-    @Override
     public Mono<BeerDTO> saveBeer(Mono<BeerDTO> beerDTO) {
         return beerDTO.map(beerMapper::beerDtoToBeer)
                 .flatMap(beerRepository::save)
@@ -44,12 +50,6 @@ public class BeerServiceImpl implements BeerService {
     @Override
     public Mono<BeerDTO> saveBeer(BeerDTO beerDTO) {
         return beerRepository.save(beerMapper.beerDtoToBeer(beerDTO))
-                .map(beerMapper::beerToBeerDTO);
-    }
-
-    @Override
-    public Mono<BeerDTO> getById(String beerId) {
-        return beerRepository.findById(beerId)
                 .map(beerMapper::beerToBeerDTO);
     }
 
