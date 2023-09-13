@@ -8,7 +8,7 @@ public interface CustomerService {
 
     Flux<CustomerDTO> listCustomers();
 
-    Mono<CustomerDTO> getById(String id);
+    Mono<CustomerDTO> getById(String customerId);
 
     Mono<CustomerDTO> findFirstByCustomerName(String customerName);
 
