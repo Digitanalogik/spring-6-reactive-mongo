@@ -94,7 +94,7 @@ public class BeerServiceImplTest {
         Mono<BeerDTO> savedMono = beerService.saveBeer(Mono.just(beerDTO));
 
         savedMono.subscribe(savedDto -> {
-            System.out.println(savedDto.getId());
+            log.info("Saved Beer: {}", savedDto.getId());
             atomicBoolean.set(true);
             atomicDto.set(savedDto);
         });
