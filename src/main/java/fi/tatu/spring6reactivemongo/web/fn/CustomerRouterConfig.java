@@ -18,7 +18,7 @@ public class CustomerRouterConfig {
 
     private final CustomerHandler handler;
     @Bean
-    public RouterFunction<ServerResponse> beerRoutes() {
+    public RouterFunction<ServerResponse> customerRoutes() {
         return route()
                 .GET(CUSTOMER_PATH, accept(APPLICATION_JSON), handler::listCustomers)
                 .GET(CUSTOMER_PATH_ID, accept(APPLICATION_JSON), handler::getCustomerById)
