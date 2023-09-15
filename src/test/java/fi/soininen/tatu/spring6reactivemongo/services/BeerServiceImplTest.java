@@ -1,9 +1,9 @@
-package fi.tatu.spring6reactivemongo.services;
+package fi.soininen.tatu.spring6reactivemongo.services;
 
-import fi.tatu.spring6reactivemongo.domain.Beer;
-import fi.tatu.spring6reactivemongo.mappers.BeerMapper;
-import fi.tatu.spring6reactivemongo.mappers.BeerMapperImpl;
-import fi.tatu.spring6reactivemongo.model.BeerDTO;
+import fi.soininen.tatu.spring6reactivemongo.mappers.BeerMapperImpl;
+import fi.soininen.tatu.spring6reactivemongo.domain.Beer;
+import fi.soininen.tatu.spring6reactivemongo.mappers.BeerMapper;
+import fi.soininen.tatu.spring6reactivemongo.model.BeerDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

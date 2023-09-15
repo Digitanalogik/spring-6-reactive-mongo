@@ -1,9 +1,9 @@
-package fi.tatu.spring6reactivemongo.services;
+package fi.soininen.tatu.spring6reactivemongo.services;
 
-import fi.tatu.spring6reactivemongo.domain.Customer;
-import fi.tatu.spring6reactivemongo.mappers.CustomerMapper;
-import fi.tatu.spring6reactivemongo.mappers.CustomerMapperImpl;
-import fi.tatu.spring6reactivemongo.model.CustomerDTO;
+import fi.soininen.tatu.spring6reactivemongo.domain.Customer;
+import fi.soininen.tatu.spring6reactivemongo.mappers.CustomerMapperImpl;
+import fi.soininen.tatu.spring6reactivemongo.model.CustomerDTO;
+import fi.soininen.tatu.spring6reactivemongo.mappers.CustomerMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

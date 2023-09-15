@@ -1,4 +1,4 @@
-package fi.tatu.spring6reactivemongo.web.fn;
+package fi.soininen.tatu.spring6reactivemongo.web.fn;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;

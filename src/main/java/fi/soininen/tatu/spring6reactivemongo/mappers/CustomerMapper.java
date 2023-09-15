@@ -1,7 +1,7 @@
-package fi.tatu.spring6reactivemongo.mappers;
+package fi.soininen.tatu.spring6reactivemongo.mappers;
 
-import fi.tatu.spring6reactivemongo.domain.Customer;
-import fi.tatu.spring6reactivemongo.model.CustomerDTO;
+import fi.soininen.tatu.spring6reactivemongo.domain.Customer;
+import fi.soininen.tatu.spring6reactivemongo.model.CustomerDTO;
 import org.mapstruct.Mapper;
 
 @Mapper

@@ -1,7 +1,7 @@
-package fi.tatu.spring6reactivemongo.bootstrap;
+package fi.soininen.tatu.spring6reactivemongo.bootstrap;
 
-import fi.tatu.spring6reactivemongo.domain.Beer;
-import fi.tatu.spring6reactivemongo.repositories.BeerRepository;
+import fi.soininen.tatu.spring6reactivemongo.domain.Beer;
+import fi.soininen.tatu.spring6reactivemongo.repositories.BeerRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;

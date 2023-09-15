@@ -1,6 +1,6 @@
-package fi.tatu.spring6reactivemongo.repositories;
+package fi.soininen.tatu.spring6reactivemongo.repositories;
 
-import fi.tatu.spring6reactivemongo.domain.Beer;
+import fi.soininen.tatu.spring6reactivemongo.domain.Beer;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

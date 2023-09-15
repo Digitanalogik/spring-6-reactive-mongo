@@ -1,8 +1,8 @@
-package fi.tatu.spring6reactivemongo.web.fn;
+package fi.soininen.tatu.spring6reactivemongo.web.fn;
 
-import fi.tatu.spring6reactivemongo.domain.Customer;
-import fi.tatu.spring6reactivemongo.model.CustomerDTO;
-import fi.tatu.spring6reactivemongo.services.CustomerServiceImplTest;
+import fi.soininen.tatu.spring6reactivemongo.domain.Customer;
+import fi.soininen.tatu.spring6reactivemongo.model.CustomerDTO;
+import fi.soininen.tatu.spring6reactivemongo.services.CustomerServiceImplTest;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;

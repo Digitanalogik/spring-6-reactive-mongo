@@ -1,4 +1,4 @@
-package fi.tatu.spring6reactivemongo.model;
+package fi.soininen.tatu.spring6reactivemongo.model;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

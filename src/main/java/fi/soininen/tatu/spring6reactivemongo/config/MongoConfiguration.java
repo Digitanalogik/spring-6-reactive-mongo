@@ -1,4 +1,4 @@
-package fi.tatu.spring6reactivemongo.config;
+package fi.soininen.tatu.spring6reactivemongo.config;
 
 import com.mongodb.MongoClientSettings;
 import com.mongodb.MongoCredential;

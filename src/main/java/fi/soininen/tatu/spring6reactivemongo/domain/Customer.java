@@ -1,4 +1,4 @@
-package fi.tatu.spring6reactivemongo.domain;
+package fi.soininen.tatu.spring6reactivemongo.domain;
 
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;

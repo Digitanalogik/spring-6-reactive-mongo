@@ -1,4 +1,4 @@
-package fi.tatu.spring6reactivemongo;
+package fi.soininen.tatu.spring6reactivemongo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

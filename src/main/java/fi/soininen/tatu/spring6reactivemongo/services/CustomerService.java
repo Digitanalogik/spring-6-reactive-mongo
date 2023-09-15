@@ -1,6 +1,6 @@
-package fi.tatu.spring6reactivemongo.services;
+package fi.soininen.tatu.spring6reactivemongo.services;
 
-import fi.tatu.spring6reactivemongo.model.CustomerDTO;
+import fi.soininen.tatu.spring6reactivemongo.model.CustomerDTO;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

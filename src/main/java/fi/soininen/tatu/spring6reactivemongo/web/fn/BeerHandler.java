@@ -1,7 +1,7 @@
-package fi.tatu.spring6reactivemongo.web.fn;
+package fi.soininen.tatu.spring6reactivemongo.web.fn;
 
-import fi.tatu.spring6reactivemongo.model.BeerDTO;
-import fi.tatu.spring6reactivemongo.services.BeerService;
+import fi.soininen.tatu.spring6reactivemongo.services.BeerService;
+import fi.soininen.tatu.spring6reactivemongo.model.BeerDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

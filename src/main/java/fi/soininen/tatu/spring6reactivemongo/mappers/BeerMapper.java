@@ -1,7 +1,7 @@
-package fi.tatu.spring6reactivemongo.mappers;
+package fi.soininen.tatu.spring6reactivemongo.mappers;
 
-import fi.tatu.spring6reactivemongo.domain.Beer;
-import fi.tatu.spring6reactivemongo.model.BeerDTO;
+import fi.soininen.tatu.spring6reactivemongo.domain.Beer;
+import fi.soininen.tatu.spring6reactivemongo.model.BeerDTO;
 import org.mapstruct.Mapper;
 
 @Mapper

@@ -1,7 +1,7 @@
-package fi.tatu.spring6reactivemongo.web.fn;
+package fi.soininen.tatu.spring6reactivemongo.web.fn;
 
-import fi.tatu.spring6reactivemongo.model.CustomerDTO;
-import fi.tatu.spring6reactivemongo.services.CustomerService;
+import fi.soininen.tatu.spring6reactivemongo.model.CustomerDTO;
+import fi.soininen.tatu.spring6reactivemongo.services.CustomerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package fi.tatu.spring6reactivemongo;
+package fi.soininen.tatu.spring6reactivemongo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

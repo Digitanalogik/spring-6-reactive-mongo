@@ -1,8 +1,8 @@
-package fi.tatu.spring6reactivemongo.services;
+package fi.soininen.tatu.spring6reactivemongo.services;
 
-import fi.tatu.spring6reactivemongo.mappers.BeerMapper;
-import fi.tatu.spring6reactivemongo.model.BeerDTO;
-import fi.tatu.spring6reactivemongo.repositories.BeerRepository;
+import fi.soininen.tatu.spring6reactivemongo.repositories.BeerRepository;
+import fi.soininen.tatu.spring6reactivemongo.mappers.BeerMapper;
+import fi.soininen.tatu.spring6reactivemongo.model.BeerDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;

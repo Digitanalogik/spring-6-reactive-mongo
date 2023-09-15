@@ -1,8 +1,8 @@
-package fi.tatu.spring6reactivemongo.services;
+package fi.soininen.tatu.spring6reactivemongo.services;
 
-import fi.tatu.spring6reactivemongo.mappers.CustomerMapper;
-import fi.tatu.spring6reactivemongo.model.CustomerDTO;
-import fi.tatu.spring6reactivemongo.repositories.CustomerRepository;
+import fi.soininen.tatu.spring6reactivemongo.repositories.CustomerRepository;
+import fi.soininen.tatu.spring6reactivemongo.mappers.CustomerMapper;
+import fi.soininen.tatu.spring6reactivemongo.model.CustomerDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
